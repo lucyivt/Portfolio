@@ -1,4 +1,4 @@
-# Lucy Villalbos Torres
+# Lucy Villalobos Torres
 ****
 **8-bit CPU**  
 
