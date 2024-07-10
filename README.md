@@ -1,5 +1,6 @@
 # Projects and Research
 Lucy Villalobos Torres
+
 ****
 **Developing a Framework for Soft Robot Simulators**
 
@@ -51,6 +52,6 @@ To analyze these changes, a region of nodes called a path on the mesh of the mod
 Not only did the tetrahedrons to vary in size, but also a quadratic geometric order was applied to the mesh. This was done  to better represent the complex geometry and bending deformations and increased the number of nodes on each tetrahedron. Therefore the algorithm needed to account for different weighted edges.
 
 That being the case, an algorithm using informed search and non-uniform cost was used to find a solution. By extending Dijkstra’s algorithm with a heuristic estimate h(n), the A* search algorithm was used to find the shortest path between two arbitrary nodes. An adjacency matrix represented the node connectivity in the model (dimensions were 9377 x 9377). 
-By specifying two arbitrary nodes, the algorithm successfully generated a path. The calculated path is marginally different than the path created by ABAQUS. Especially near the end of the path where the calculated path has a staircase-like formation.  Overall, the calculated path contains more nodes and appears less smooth. 
+By specifying two arbitrary nodes, the algorithm successfully generated a path. The results showed the calculated path was marginally different than the path created by ABAQUS. Especially near the end of the path where the calculated path has a staircase-like formation.  Overall, the calculated path contains more nodes and appears less smooth. 
 
 ![Subject Observer UML](/images/cyl.png)
