@@ -1,6 +1,7 @@
 # Projects and Research
 ****
 **Developing a Framework for Soft Robot Simulators**
+
  Differentiable Programming for Physical Simulation (difftaichi) allows optimization efficiency with brute-force gradient descent. We replaced gradient descent with Covariance Matrix Adaptation Evolutionary Strategy (CMA-ES). CMA-ES was designed to optimize single-objective optimization of continuous spaces. It models the sampling distributions of the population as a multivariate normal distribution N(m, C). Where m is the distribution mean vector and C is the covariance matrix. 
 
 The results of optimizing the loss function with CMA-ES are shown in the video and graphs provided below.
@@ -42,11 +43,11 @@ To counter this issue, a sign was placed at the entrance of the roundabout to no
 
 **Summer Research**
 
-Embryonic development was simulated using finite element analysis (FEA) to help improve the hypothesis on s-looping, a significant process during the formation of the heart. FEA represents the change in mechanical components (strain, stress, deformation) caused by differential growth. The values are then plotted on an XY graph for analysis. To acquire deformation values along specific regions of the model, a path of nodes is necessary. A path is defined by selecting a series of nodes. Since the software ABAQUS doesn't always create an efficient path, the goal was to create an algorithm that will always find the shortest path between two nodes. 
+As an embryo grows, we aim to better visualize and understand the internal mechanical components. Early stages of embryonic development were simulated in a software called ABAQUS. A cylindrical model with a tetrahedral mesh was created to represent the embryo. Finite element analysis (FEA) was utilized to help analyze the changes in mechanical components such as strain, stress, and deformation. 
 
-A cylindrical model was created in Abaqus. A tetrahedral mesh with a quadratic geometric order was applied to the cylindrical model to better represent the complex geometry and bending deformations. Since elements in tetrahedrons vary in size, the edges between nodes were weighted. 
+To analyze these changes, a region of nodes called a path on the mesh of the model gets selected and the values at those points get plotted on a graph. Since the software ABAQUS doesn't always create an efficient path, our goal was to develop an algorithm that will always find the shortest path between two nodes. 
 
-![Subject Observer UML](/images/tet.png)
+Not only did the tetrahedrons to vary in size, but also a quadratic geometric order was applied to the mesh. This was done  to better represent the complex geometry and bending deformations and increased the number of nodes on each tetrahedron. Therefore the algorithm needed to account for different weighted edges.
 
 That being the case, an algorithm using informed search and non-uniform cost was used to find a solution. By extending Dijkstra’s algorithm with a heuristic estimate h(n), the A* search algorithm was used to find the shortest path between two arbitrary nodes. An adjacency matrix represented the node connectivity in the model (dimensions were 9377 x 9377). 
 By specifying two arbitrary nodes, the algorithm successfully generated a path. The calculated path is marginally different than the path created by ABAQUS. Especially near the end of the path where the calculated path has a staircase-like formation.  Overall, the calculated path contains more nodes and appears less smooth. 
