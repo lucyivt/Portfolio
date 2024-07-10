@@ -6,11 +6,8 @@ Lucy Villalobos Torres
 
  Differentiable Programming for Physical Simulation (difftaichi) allows optimization efficiency with brute-force gradient descent. We replaced gradient descent with Covariance Matrix Adaptation Evolutionary Strategy (CMA-ES). CMA-ES was designed to optimize single-objective optimization of continuous spaces. It models the sampling distributions of the population as a multivariate normal distribution N(m, C). Where m is the distribution mean vector and C is the covariance matrix. 
 
-The results of optimizing the loss function with CMA-ES are shown in the video and graphs provided below.
-
-https://github.com/lucyivt/thesis/assets/136722147/c2682a9f-faca-483f-8c1e-1e300a81f9d0
-
-An optimized 2D-biped robot after 1000 evaluations. 
+The results of optimizing the loss function with CMA-ES are shown in the graphs provided below.
+ 
 ![CMA-ES versus gradient descent](images/Figure_2.png)
 The median loss functions after 100 evaluations for CMA-ES (green) and gradient descent (yellow) along with their 25th and 75th percentile values. The x-axis shows the number of evaluations and the y axis represents the loss values.
 ![Whiskerplot](images/Figure_3.png)
