@@ -40,8 +40,8 @@ However, when the robot enters or exits the roundabout, the yellow lanes have a 
 To counter this issue, a sign was placed at the entrance of the roundabout to notify the robot when to stop detecting lanes and instead when to start rotating in the correct direction. To detect the entrance sign, I developed code utilizing odometry. 
 
 ![Subject Observer UML](/images/roundabout.png)
-****
 
+****
 **Summer Research**
 
 As an embryo grows, we aim to better visualize and understand the internal mechanical components. Early stages of embryonic development were simulated in a software called ABAQUS. A cylindrical model with a tetrahedral mesh was created to represent the embryo. Finite element analysis (FEA) was utilized to help analyze the changes in mechanical components such as strain, stress, and deformation. 
