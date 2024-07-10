@@ -1,20 +1,41 @@
-# Lucy Villalbos Torres
+# Projects and Research
+****
+**Developing a Framework for Soft Robot Simulators**
+ Differentiable Programming for Physical Simulation (difftaichi) allows optimization efficiency with brute-force gradient descent. We replaced gradient descent with Covariance Matrix Adaptation Evolutionary Strategy (CMA-ES). CMA-ES was designed to optimize single-objective optimization of continuous spaces. It models the sampling distributions of the population as a multivariate normal distribution N(m, C). Where m is the distribution mean vector and C is the covariance matrix. 
+
+The results of optimizing the loss function with CMA-ES are shown in the video and graphs provided below.
+
+https://github.com/lucyivt/thesis/assets/136722147/c2682a9f-faca-483f-8c1e-1e300a81f9d0
+
+An optimized 2D-biped robot after 1000 evaluations. 
+![CMA-ES versus gradient descent](images/Figure_2.png)
+The median loss functions after 100 evaluations for CMA-ES (green) and gradient descent (yellow) along with their 25th and 75th percentile values. The x-axis shows the number of evaluations and the y axis represents the loss values.
+![Whiskerplot](images/Figure_3.png)
+The boxplot displays the results of conducting a Mann-Whitney U Test. It shows the median and quartiles at evaluation 100 for CMA-ES and gradient descent. The median value for CMA-ES is -0.539 and for gradient descent, it's -0.502. The p-value was obtained by a two-tailed test and had a value of less than 0.001. The four stars at the top of the boxplot represent the p-value.
+
 ****
 **8-bit CPU**  
 
-Used logisim to create an 8-bit CPU that supports R-type, I-type, jump, and BEQ instructions. The CPU contains a register file with 8 registers. Instruction and data memory were also implemented using RAM components. A control logic unit was necessary to control the selectors attached to the muxes depedning on the type of instruction that was just fetched from the intruction memory. In the circuit below the instruction memory is located on the left and data memory is located on the right. The register file and ALU are located towards the middle.  
+During my Computer Organization course, I utilized logisim to create an 8-bit CPU that supports a variety of MIPS instructions such as R-type, I-type, jump, and BEQ. The instructions support arthmitic, if-statements, and while-loops. 
+
+I also implemented a control logic unit which was necessary to control the selectors attached to the multiplexors. The control logic unit takes in the first 5 bits of the instruction and outputs the type of the current instruction by selecting either 0 or 1 on the multiplexor. The instruction is fetched from the intruction memory.
+
+Instruction and data memory were implemented using RAM components.Logisim has the functionality to take in MIPS assembly code into it's RAM components which is how instructions are fed to the CPU.
+
+In the circuit below the instruction memory is located on the left and data memory is located on the right. The register file and ALU are located in the middle.  
 
 ![Subject Observer UML](/images/CPU.png)
 
 ****
-**Scheme Interpreter**  
-
-Developed a functional interpreter in the programming language called Scheme. After integrating arithmetic, lists, variables, functions, and recursion, a "store" was created to hold memory. Garbage collectors are necessary to implement in programming lanuages to get rid of elements that are no longer needed. The garbage collector used the trace and sweep algorithm (depth first search) to traverse through the values in the store and determine which ones to keep. Any item that wasn't visited during the traversal is removed from the store. 
-
-****
 **Robotic Autonomous Driving**  
 
-The goal was to make a robot autonomously navigate a roundabout. The lanes of the roundabout were created by placing tape on the floor. Open-source code found on [github]((https://github.com/ROBOTIS-GIT/turtlebot3_autorace_2020)) contains code to detect lanes by utilizing openCV. However, the code only works for lanes that don't have any gaps in them. The yellow lanes (shown below) have a gap when entering/exiting the roundabout. To counter this issue, a sign was placed at the entrance of the roundabout to notify the robot when to stop detecting lanes and instead start rotating. I developed code to detect entrance signs by utilizing odometry.
+The goal of this project was to make a robot autonomously navigate a roundabout. The type of robot was the Turtlebot3 burger which runs on a raspberry pi that contains ROS. 
+
+The lanes of the roundabout were created by placing green and yellow tape on the floor. Open-source code found on this [github page]((https://github.com/ROBOTIS-GIT/turtlebot3_autorace_2020)) contains code to detect lanes by utilizing openCV. The code was designed only for lanes that don't have any gaps in them. 
+
+However, when the robot enters or exits the roundabout, the yellow lanes have a gap. Whenever the robot would get to the entrance of the roundabout it would get confused and drive off course. 
+
+To counter this issue, a sign was placed at the entrance of the roundabout to notify the robot when to stop detecting lanes and instead when to start rotating in the correct direction. To detect the entrance sign, I developed code utilizing odometry. 
 
 ![Subject Observer UML](/images/roundabout.png)
 ****
