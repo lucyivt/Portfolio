@@ -2,6 +2,27 @@
 Lucy Villalobos Torres
 
 ****
+**[Meal Mate App](https://github.com/lucyivt/MealMate)** 
+*Description*: Meal Mate is an app that lets you save recipes and displays key nutrition facts with total calories.
+*Audiance*: Individuals whose goals are to eat healthy and keep track of meals (fitness enthusiasts, home cooks, parents, etc.)
+
+ To create a new recipe, the user must include a list of ingredients. The total calories and nutrition facts are then calculated and added to the recipe by calling the API. [Edamam API](https://api.edamam.com/doc/open-api/nutrition-analysis-v1.yaml) was used to get a full analysis of food recipes. The backend was composed of Java Spring Boot with JDBC Template. 
+
+**Meal Mate UI (React)**
+![UI](/Portfolio/images/ui.png)
+
+The project followed the MVC design pattern:
+
+*Model*: Managed database interactions for recipes, ingredients, and nutrients.
+*View*: Developed and tested API requests using Postman. Used React for the UI.
+*Controllers*: Handled API endpoints for user and recipe functionalities.
+*Services*: Defined CRUD operations and managed the app's business logic.
+
+I worked collaboratively with four other team members to create Meal Mate. We used Trello to distribute the workload by creating tickets. I developed the Ingredient DAO, Recipe Service Layer, testing, and overall organization of the code. 
+
+
+
+****
 **Developing a Framework for Soft Robot Simulators**
 
  Differentiable Programming for Physical Simulation (difftaichi) allows optimization efficiency with brute-force gradient descent. We replaced gradient descent with Covariance Matrix Adaptation Evolutionary Strategy (CMA-ES). CMA-ES was designed to optimize single-objective optimization of continuous spaces. It models the sampling distributions of the population as a multivariate normal distribution N(m, C). Where m is the distribution mean vector and C is the covariance matrix. 
@@ -24,7 +45,7 @@ Instruction and data memory were implemented using RAM components.Logisim has th
 
 In the circuit below the instruction memory is located on the left and data memory is located on the right. The register file and ALU are located in the middle.  
 
-![Subject Observer UML](/images/CPU.png)
+![Subject Observer UML](/Portfolio/images/CPU.png)
 
 ****
 **Robotic Autonomous Driving**  
@@ -37,18 +58,6 @@ However, when the robot enters or exits the roundabout, the yellow lanes have a 
 
 To counter this issue, a sign was placed at the entrance of the roundabout to notify the robot when to stop detecting lanes and instead when to start rotating in the correct direction. To detect the entrance sign, I developed code utilizing odometry. 
 
-![Subject Observer UML](/images/roundabout.png)
+![Subject Observer UML](/Portfolio/images/roundabout.png)
 
 ****
-**Summer Research**
-
-As an embryo grows, we aim to better visualize and understand the internal mechanical components. Early stages of embryonic development were simulated in a software called ABAQUS. A cylindrical model with a tetrahedral mesh was created to represent the embryo. Finite element analysis (FEA) was utilized to help analyze the changes in mechanical components such as strain, stress, and deformation. 
-
-To analyze these changes, a region of nodes called a path on the mesh of the model gets selected and the values at those points get plotted on a graph. Since the software ABAQUS doesn't always create an efficient path, our goal was to develop an algorithm that will always find the shortest path between two nodes. 
-
-Not only did the tetrahedrons to vary in size, but also a quadratic geometric order was applied to the mesh. This was done  to better represent the complex geometry and bending deformations and increased the number of nodes on each tetrahedron. Therefore the algorithm needed to account for different weighted edges.
-
-That being the case, an algorithm using informed search and non-uniform cost was used to find a solution. By extending Dijkstra’s algorithm with a heuristic estimate h(n), the A* search algorithm was used to find the shortest path between two arbitrary nodes. An adjacency matrix represented the node connectivity in the model (dimensions were 9377 x 9377). 
-By specifying two arbitrary nodes, the algorithm successfully generated a path. The results showed the calculated path was marginally different than the path created by ABAQUS. Especially near the end of the path where the calculated path has a staircase-like formation.  Overall, the calculated path contains more nodes and appears less smooth. 
-
-![Subject Observer UML](/images/cyl.png)
