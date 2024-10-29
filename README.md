@@ -3,20 +3,25 @@ Lucy Villalobos Torres
 
 ****
 **[Meal Mate App](https://github.com/lucyivt/MealMate)** 
+
 *Description*: Meal Mate is an app that lets you save recipes and displays key nutrition facts with total calories.
+
 *Audiance*: Individuals whose goals are to eat healthy and keep track of meals (fitness enthusiasts, home cooks, parents, etc.)
 
  To create a new recipe, the user must include a list of ingredients. The total calories and nutrition facts are then calculated and added to the recipe by calling the API. [Edamam API](https://api.edamam.com/doc/open-api/nutrition-analysis-v1.yaml) was used to get a full analysis of food recipes. The backend was composed of Java Spring Boot with JDBC Template. 
 
-**Meal Mate UI (React)**
 ![UI](/Portfolio/images/ui.png)
+The app needs user input for the title, ingredients, and image of recipe.
 
 The project followed the MVC design pattern:
 
-*Model*: Managed database interactions for recipes, ingredients, and nutrients.
-*View*: Developed and tested API requests using Postman. Used React for the UI.
-*Controllers*: Handled API endpoints for user and recipe functionalities.
-*Services*: Defined CRUD operations and managed the app's business logic.
+- *Model:* Managed database interactions for recipes, ingredients, and nutrients.
+
+- *View:* Developed and tested API requests using Postman. Used React for the UI.
+
+- *Controllers:* Handled API endpoints for user and recipe functionalities.
+
+- *Services:* Defined CRUD operations and managed the app's business logic.
 
 I worked collaboratively with four other team members to create Meal Mate. We used Trello to distribute the workload by creating tickets. I developed the Ingredient DAO, Recipe Service Layer, testing, and overall organization of the code. 
 
