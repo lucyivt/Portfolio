@@ -1,4 +1,4 @@
-# Projects and Research
+# Projects
 Lucy Villalobos Torres
 
 ****
